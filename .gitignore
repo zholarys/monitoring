@@ -1,0 +1,6 @@
+monitoring/grafana/data/
+*.env
+.env
+__pycache__/
+loki_data/
+alloy_data/

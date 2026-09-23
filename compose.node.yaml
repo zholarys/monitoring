@@ -1,0 +1,21 @@
+services:
+  node-exporter:
+    image: prom/node-exporter:latest
+    pid: host
+    command:
+      - --path.rootfs=/host
+      - --collector.disable-defaults
+      - --collector.cpu
+      - --collector.meminfo
+      - --collector.filesystem
+      - --collector.loadavg
+      - --collector.stat
+      - --collector.time
+    volumes:
+      - /:/host:ro,rslave
+    mem_limit: 128m
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,11 @@
+groups:
+  - name: platform
+    rules:
+      - alert: PlatformNotReady
+        expr: probe_success{job="platform"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Платформа не готова обслуживать запросы"
+          description: "Проверка {{ $labels.instance }} не проходит больше минуты. Проверить Nginx, backend, MySQL и Redis."
