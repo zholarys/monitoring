@@ -28,4 +28,3 @@ docker compose up -d
 ```
 
 Grafana is available at `http://localhost:3000`. The `DevopsLab` dashboard includes a `$service` variable for switching between containers' logs.
-# monitoring
